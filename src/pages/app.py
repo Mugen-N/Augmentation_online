@@ -11,7 +11,7 @@ from utils import (
     get_placeholder_params,
     select_transformations,
 )
-from src.visuals import (
+from visuals import (
     select_image,
     show_docstring,
     get_transormations_params,
