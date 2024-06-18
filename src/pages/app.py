@@ -3,7 +3,7 @@ import io
 import streamlit as st
 import albumentations as A
 from PIL import Image
-from src.pages.home import authenticated_menu as menu
+from pages.home import authenticated_menu as menu
 
 from utils import (
     load_augmentations_config,
