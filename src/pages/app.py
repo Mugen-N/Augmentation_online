@@ -5,7 +5,7 @@ import albumentations as A
 from PIL import Image
 from src.pages.home import authenticated_menu as menu
 
-from src.utils import (
+from utils import (
     load_augmentations_config,
     get_arguments,
     get_placeholder_params,
