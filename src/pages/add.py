@@ -2,15 +2,15 @@ import streamlit as st
 import pandas as pd
 import os
 
-from src.pages.home import authenticated_menu as menu
+from pages.home import authenticated_menu as menu
 
-from src.database import (
+from database import (
     get_user_login,
     check_table,
     add_dataset,
 )
 
-from src.utils import (
+from utils import (
     create_user_folder,
     image_saver,
     image_formatter,
