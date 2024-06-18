@@ -2,13 +2,13 @@ import streamlit as st
 from PIL import Image
 import os
 
-from src.pages.home import authenticated_menu as menu
+from pages.home import authenticated_menu as menu
 
-from src.database import (
+from database import (
     get_user_login,
 )
 
-from src.utils import (
+from utils import (
     create_user_folder,
     create_zip_from_images,
 )
