@@ -9,7 +9,7 @@ def authenticated_menu():
             }
           </style>
                 """)
-        st.logo("C:\\Users\\Пользователь\\PycharmProjects\\Augmentation\\logo.png")
+        st.logo("logo.png")
         st.sidebar.page_link("pages/home.py", label="Главная")
         st.sidebar.page_link("pages/app.py", label="Аугментация")
         st.sidebar.page_link("pages/aug_data.py", label="Аугментация датасета")
