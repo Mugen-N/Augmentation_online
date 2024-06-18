@@ -3,18 +3,18 @@ import cv2
 import streamlit as st
 import albumentations as A
 
-from src.utils import (
+from utils import (
     load_augmentations_config,
     get_placeholder_params,
     select_transformations,
     load_image, create_user_folder,
 )
 
-from src.database import get_user_login
+from database import get_user_login
 
-from src.visuals import get_transormations_params
+from visuals import get_transormations_params
 
-from src.pages.home import authenticated_menu as menu
+from pages.home import authenticated_menu as menu
 
 
 # Папка для сохранения загруженных изображений
