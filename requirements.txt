@@ -1,0 +1,10 @@
+streamlit==1.35.0
+pandas>2.0
+albumentations==0.4.3
+numpy
+opencv-python-headless==4.9.0.80
+pillow
+zipp
+jsonschema
+jsonschema-specifications
+
