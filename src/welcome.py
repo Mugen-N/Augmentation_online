@@ -68,7 +68,7 @@ def main():
                     }
                   </style>
                         """)
-    st.logo("C:\\Users\\Пользователь\\PycharmProjects\\Augmentation\\logo.png")
+    st.logo("logo.png")
 
     col1, col2 = st.columns(2)
     with col1:
