@@ -1,7 +1,7 @@
 import streamlit as st
 import sqlite3
 
-from src.database import (
+from database import (
     check_user_table,
     add_user,
     check_user,
