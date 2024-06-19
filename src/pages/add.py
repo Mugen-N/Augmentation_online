@@ -13,6 +13,7 @@ from database import (
 from utils import (
     create_user_folder,
     image_formatter,
+    add_images_to_github,
 )
 
 st.set_page_config(page_title="Upload Images to DataFrame", layout="wide")
