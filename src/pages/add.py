@@ -19,7 +19,7 @@ from utils import (
 st.set_page_config(page_title="Upload Images to DataFrame", layout="wide")
 
 # Ваш личный токен GitHub (никому не передавайте его)
-token = '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'
+token = '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'
 # Ваш репозиторий в формате "username/repo"
 repo = 'Mugen-N/Augmentation_online'
 # Папка в репозитории, куда вы хотите загрузить изображение
