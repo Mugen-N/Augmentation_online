@@ -65,12 +65,10 @@ def main():
         if not os.path.exists(new_folder_path):
             os.makedirs(new_folder_path)
 
-        data = add_images_to_github(token, repo, uploaded_files, upload_folder)
+        add_images_to_github(token, repo, uploaded_files, upload_folder)
         add_dataset(data_name, new_folder_path, user_id)
-        df = pd.DataFrame(data)
         st.success("Данные успешно добавлены!")
-        st.write("Добавленные данные:")
-        st.write(df.to_html(escape=False, formatters={"Изображение": image_formatter}), unsafe_allow_html=True)
+       
     else:
         st.error("Нет файлов для загрузки")
 
