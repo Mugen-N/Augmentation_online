@@ -18,10 +18,12 @@ from utils import (
 
 st.set_page_config(page_title="Upload Images to DataFrame", layout="wide")
 
-# Папка для сохранения загруженных изображений
-UPLOAD_FOLDER = 'Upload_dataset'
-if not os.path.exists(UPLOAD_FOLDER):
-    os.makedirs(UPLOAD_FOLDER)
+# Ваш личный токен GitHub (никому не передавайте его)
+token = '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'
+# Ваш репозиторий в формате "username/repo"
+repo = 'Mugen-N/Augmentation_online'
+# Папка в репозитории, куда вы хотите загрузить изображение
+upload_folder = 'Upload_dataset'
 
 def main():
     menu()
@@ -63,7 +65,7 @@ def main():
         if not os.path.exists(new_folder_path):
             os.makedirs(new_folder_path)
 
-        data = image_saver(uploaded_files, new_folder_path)
+        data = add_images_to_github(token, repo, uploaded_files, upload_folder)
         add_dataset(data_name, new_folder_path, user_id)
         df = pd.DataFrame(data)
         st.success("Данные успешно добавлены!")
