@@ -19,7 +19,7 @@ from utils import (
 st.set_page_config(page_title="Upload Images to DataFrame", layout="wide")
 
 # Папка для сохранения загруженных изображений
-UPLOAD_FOLDER = 'D:\\Upload_dataset'
+UPLOAD_FOLDER = 'Upload_dataset'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
 
