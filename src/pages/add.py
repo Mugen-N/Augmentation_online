@@ -23,7 +23,7 @@ token = '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'
 # Ваш репозиторий в формате "username/repo"
 repo = 'Mugen-N/Augmentation_online'
 # Папка в репозитории, куда вы хотите загрузить изображение
-upload_folder = 'Upload_dataset'
+upload_folder = 'Upload_dataset/user'
 
 def main():
     menu()
