@@ -12,7 +12,6 @@ from database import (
 
 from utils import (
     create_user_folder,
-    image_saver,
     image_formatter,
 )
 
