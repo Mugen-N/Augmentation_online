@@ -8,7 +8,17 @@ import base64
 import zipfile
 import streamlit as st
 from PIL import Image
+import requests
 
+
+# Ваш личный токен GitHub (никому не передавайте его)
+github_token = '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'
+# Ваш репозиторий в формате "username/repo"
+repo = 'Mugen-N/Augmentation_online'
+# Путь к изображению, которое вы хотите загрузить
+image_path = 'D:/Upload_dataset/User3/r.jpg'
+# Папка в репозитории, куда вы хотите загрузить изображение
+upload_folder = 'Upload_dataset/User3'
 
 @st.cache_data
 def get_arguments():
@@ -198,3 +208,33 @@ def image_saver(uploaded_files, new_folder_path):
             data["Название"].append(uploaded_file.name)
             data["Изображение"].append(img_base64)
     return data
+
+def create_github_file(token, repo, path, message, content):
+    url = f"https://api.github.com/repos/{repo}/contents/{path}"
+    headers = {
+        "Authorization": f"token {token}",
+        "Accept": "application/vnd.github.v3+json"
+    }
+    data = {
+        "message": message,
+        "content": base64.b64encode(content).decode("utf-8")
+    }
+    response = requests.put(url, headers=headers, json=data)
+    if response.status_code == 201:
+        print(f"Successfully created file: {path}")
+    else:
+        print(f"Failed to create file: {response.json()}")
+
+
+def add_image_to_github(token, repo, image_path, upload_folder):
+    if not os.path.isfile(image_path):
+        raise FileNotFoundError(f"Image {image_path} does not exist.")
+
+    with open(image_path, "rb") as image_file:
+        content = image_file.read()
+
+    filename = os.path.basename(image_path)
+    path = os.path.join(upload_folder, filename).replace("\\", "/")
+    message = f"Add {filename}"
+
+    create_github_file(token, repo, path, message, content)
