@@ -16,10 +16,16 @@ from utils import (
     add_images_to_github,
 )
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 st.set_page_config(page_title="Upload Images to DataFrame", layout="wide")
 
 # Ваш личный токен GitHub (никому не передавайте его)
-token = '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'
+token = os.getenv('GITHUB_TOKEN')
+if not token:
+    st.error("GitHub Token is not set in the environment variables.")
 # Ваш репозиторий в формате "username/repo"
 repo = 'Mugen-N/Augmentation_online'
 # Папка в репозитории, куда вы хотите загрузить изображение
