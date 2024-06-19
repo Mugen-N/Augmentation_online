@@ -36,7 +36,7 @@ def main():
         user_id = st.session_state.user_id
 
     user_login = get_user_login(user_id)
-    user_folder = create_user_folder(user_login, UPLOAD_FOLDER)
+    user_folder = create_user_folder(user_login, upload_folder)
 
     # Добавление элемента загрузки нескольких файлов на веб-страницу
     uploaded_files = st.file_uploader("Загрузите изображения", type=["jpg", "jpeg", "png"], accept_multiple_files=True)
