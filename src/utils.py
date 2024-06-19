@@ -193,22 +193,6 @@ def image_to_base64(image):
 def image_formatter(img_path):
     return f'<img src="data:image/png;base64,{img_path}" width="50" height="50">'
 
-def image_saver(uploaded_files, new_folder_path):
-    if uploaded_files is not None:
-        data = {"Название": [], "Изображение": []}
-
-        for uploaded_file in uploaded_files:
-            # Сохранение загруженного изображения
-            img = Image.open(uploaded_file)
-            img_base64 = image_to_base64(img)
-            img_path = os.path.join(new_folder_path, uploaded_file.name)
-            img.save(img_path)
-
-            # Добавление данных в словарь
-            data["Название"].append(uploaded_file.name)
-            data["Изображение"].append(img_base64)
-    return data
-
 def create_github_file(token, repo, path, message, content):
     url = f"https://api.github.com/repos/{repo}/contents/{path}"
     headers = {
